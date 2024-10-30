@@ -24,11 +24,11 @@ package app.rbac
 # By default, deny requests
 default allow = false
 
-runtime = opa.runtime()
-lrsEndpoint := runtime.env.LRS_ENDPOINTS
-keycloak := runtime.env.KEYCLOACK_REALM
+runtime := opa.runtime()
 
 # Allow bob to do anything
 allow {
 	input.user == "bob"
+	lrsEndpoint := runtime.env.LRS_ENDPOINTS
+	keycloak := runtime.env.KEYCLOACK_REALM
 }
