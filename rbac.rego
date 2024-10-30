@@ -24,7 +24,9 @@ package app.rbac
 # By default, deny requests
 default allow = false
 
-runtime := opa.runtime().env.OPAL_INLINE_OPA_LOG_FORMAT
+runtime = opa.runtime()
+lrsEndpoint := runtime.env.LRS_ENDPOINTS
+keycloak := runtime.env.KEYCLOACK_REALM
 
 # Allow bob to do anything
 allow {
