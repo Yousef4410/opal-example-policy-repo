@@ -25,7 +25,8 @@ package app.rbac
 default allow = false
 
 #runtime := opa.runtime()
-lrsEndpoint := opa.runtime()["env"]["LRS_ENDPOINTS"]
+lrsEndpoints := opa.runtime()["env"]["LRS_ENDPOINTS"]
+endpoints := split(lrsEndpoints,",")
 keycloak := opa.runtime()["env"]["KEYCLOACK_REALM"]
 
 # Allow bob to do anything
