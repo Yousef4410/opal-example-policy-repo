@@ -24,9 +24,7 @@ package app.rbac
 # By default, deny requests
 default allow = false
 
-test := "false"
-
-runtime := opa.runtime()
+runtime := opa.runtime().env
 
 # Allow bob to do anything
 allow {
