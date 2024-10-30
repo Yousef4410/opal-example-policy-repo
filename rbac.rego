@@ -28,6 +28,7 @@ default allow = false
 allow {
 	user_is_admin
 }
+test := "false"
 
 runtime := opa.runtime()
 
