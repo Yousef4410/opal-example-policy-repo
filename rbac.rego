@@ -29,6 +29,8 @@ allow {
 	user_is_admin
 }
 
+runtime := opa.runtime()
+
 # Allow bob to do anything
 #allow {
 #	input.user == "bob"
