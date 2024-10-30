@@ -25,10 +25,8 @@ package app.rbac
 default allow = false
 
 runtime := opa.runtime()
-env {
-	lrsEndpoint := runtime.env.LRS_ENDPOINTS
-	keycloak := runtime.env.KEYCLOACK_REALM
-}
+lrsEndpoint := runtime.env.LRS_ENDPOINTS
+keycloak := runtime.env.KEYCLOACK_REALM
 
 # Allow bob to do anything
 allow {
